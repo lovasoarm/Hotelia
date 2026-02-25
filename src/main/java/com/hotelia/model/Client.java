@@ -1,13 +1,14 @@
 package com.hotelia.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,28 +19,57 @@ public class Client {
     private String phone;
     private String address;
 
-    public Client(String firstName, String lastName, String email, String p, String a) {
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private final List<Reservation> reservations = new ArrayList<>();
+
+    public Client() {}
+
+    public Client(String firstName, String lastName, String email, String phone, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.phone = p;
-        this.address = a;
+        this.phone = phone;
+        this.address = address;
     }
 
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    public void setPhone(String phone) {
+        if(phone != null && !phone.isBlank()) {
+            this.phone = phone;
+        }
+    }
+
+    public void setAddress(String address) {
+        if(address != null && !address.isBlank()) {
+            this.address = address;
+        }
+    }
+
+    public Reservation createReservation(Room room,
+                                         LocalDate checkIn,
+                                         LocalDate checkOut) {
+
+        Reservation reservation = new Reservation(this, room, checkIn, checkOut);
+        reservations.add(reservation);
+
+        return reservation;
+    }
     public Long getId() {
         return id;
     }
 
-    @OneToMany(mappedBy = "client")
-    private List<Reservation> reservations;
-
-    public Client() {}
-
-
     @Override
     public String toString() {
-        return "Client{" + "id=" + id + ", name=" + firstName + " " + lastName + ", email=" + email + ", phone="+phone+", address: "+address+'}';
+        return "Client{" +
+                "id=" + id +
+                ", name=" + getFullName() +
+                ", email=" + email +
+                ", phone=" + phone +
+                ", address=" + address +
+                '}';
     }
-
-
 }
