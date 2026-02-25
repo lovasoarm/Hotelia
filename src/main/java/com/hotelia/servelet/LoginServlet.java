@@ -4,7 +4,7 @@ import com.hotelia.dao.UserDAO;
 import com.hotelia.enums.Role;
 import com.hotelia.model.User;
 import com.hotelia.service.AuthService;
-import com.hotelia.util.EntityManagerFactoryProvider;
+import com.hotelia.servelet.EntityManagerFactoryProvider;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
