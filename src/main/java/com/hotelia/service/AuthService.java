@@ -1,28 +1,38 @@
 package com.hotelia.service;
 
 import com.hotelia.dao.UserDAO;
+import com.hotelia.enums.Role;
 import com.hotelia.model.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 public class AuthService {
 
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
 
     public AuthService(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
     public User login(String username, String password) {
-
         User user = userDAO.findByUsername(username);
-
         if (user != null && user.getPassword().equals(password)) {
             return user;
         }
-
         return null;
     }
 
-    public void logout(jakarta.servlet.http.HttpSession session) {
-        session.invalidate();
+    public void logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+    }
+    public boolean isAdmin(User user) {
+        return user != null && user.getRole() == Role.ADMIN;
+    }
+
+    public boolean isReceptionist(User user) {
+        return user != null && user.getRole() == Role.RECEPTIONIST;
     }
 }
