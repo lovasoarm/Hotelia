@@ -1,5 +1,6 @@
 package com.hotelia.model;
 
+import com.hotelia.enums.ReservationStatus;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -20,24 +21,44 @@ public class Reservation {
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private ReservationStatus status;
 
     private LocalDateTime createdAt;
 
-    public Reservation() {
-    }
+    public Reservation() {}
 
-    public Reservation(Client client,
-                       Room room,
-                       LocalDate checkInDate,
-                       LocalDate checkOutDate) {
-
+    public Reservation(Client client, Room room, LocalDate checkInDate, LocalDate checkOutDate) {
         this.client = client;
         this.room = room;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
-        this.status = "PENDING";
+        this.status = ReservationStatus.PENDING;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public LocalDate getCheckInDate() {
+        return checkInDate;
+    }
+
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
+
+    public ReservationStatus getStatus() {
+        return status;
     }
 
     public long getNumberOfNights() {
@@ -49,10 +70,18 @@ public class Reservation {
     }
 
     public void confirm() {
-        this.status = "CONFIRMED";
+        this.status = ReservationStatus.CONFIRMED;
     }
 
     public void cancel() {
-        this.status = "CANCELLED";
+        this.status = ReservationStatus.CANCELLED;
+    }
+
+    public void complete() {
+        this.status = ReservationStatus.COMPLETED;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 }

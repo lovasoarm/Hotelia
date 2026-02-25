@@ -1,5 +1,6 @@
 package com.hotelia.model;
 
+import com.hotelia.enums.Role;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,21 +12,27 @@ public class User {
 
     private String username;
     private String password;
-    private String role;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User() {}
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, Role role) {
         this.username = username;
         this.password = password;
         this.role = role;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }

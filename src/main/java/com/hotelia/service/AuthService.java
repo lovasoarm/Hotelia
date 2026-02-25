@@ -15,10 +15,14 @@ public class AuthService {
 
         User user = userDAO.findByUsername(username);
 
-        if(user != null && user.getPassword().equals(password)) {
+        if (user != null && user.getPassword().equals(password)) {
             return user;
         }
 
         return null;
+    }
+
+    public void logout(jakarta.servlet.http.HttpSession session) {
+        session.invalidate();
     }
 }
