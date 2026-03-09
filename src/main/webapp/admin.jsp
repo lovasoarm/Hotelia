@@ -9,16 +9,49 @@
 %>
 <html>
 <head>
-    <title>Admin Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
-        h2 { color: #333; }
-        a.logout { display: inline-block; margin-top: 20px; padding: 8px 12px; background: orange; color: white; text-decoration: none; border-radius: 4px; }
-        a.logout:hover { background: #e74c3c; }
-    </style>
+    <title>Admin Dashboard - Hotelia</title>
+    <link rel="stylesheet" href="css/dashboard.css"/>
 </head>
 <body>
-<h2>Welcome Admin: <%= user.getUsername() %></h2>
-<a href="logout" class="logout">Logout</a>
+
+<div class="navbar">
+    <h1>HOTELIA</h1>
+    <div>
+        <span>Admin : <%= user.getUsername() %></span>
+        <a href="logout">Déconnexion</a>
+    </div>
+</div>
+
+<div class="container">
+    <p class="welcome">Tableau de bord — accès complet</p>
+    <div class="grid">
+
+        <a href="clients" class="card">
+            <div class="icon">👥</div>
+            <div class="label">Clients</div>
+            <div class="desc">Créer, modifier, supprimer</div>
+        </a>
+
+        <a href="rooms" class="card">
+            <div class="icon">🛏</div>
+            <div class="label">Chambres</div>
+            <div class="desc">Gérer les chambres et statuts</div>
+        </a>
+
+        <a href="reservations" class="card">
+            <div class="icon">📅</div>
+            <div class="label">Réservations</div>
+            <div class="desc">Créer, confirmer, annuler</div>
+        </a>
+
+        <a href="invoices" class="card">
+            <div class="icon">💰</div>
+            <div class="label">Factures</div>
+            <div class="desc">Générer et consulter</div>
+        </a>
+
+    </div>
+</div>
+
 </body>
 </html>
