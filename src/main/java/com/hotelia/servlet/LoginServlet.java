@@ -1,10 +1,9 @@
-package com.hotelia.servelet;
+package com.hotelia.servlet;
 
 import com.hotelia.dao.UserDAO;
 import com.hotelia.enums.Role;
 import com.hotelia.model.User;
 import com.hotelia.service.AuthService;
-import com.hotelia.servelet.EntityManagerFactoryProvider;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -36,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             if (user.getRole() == Role.ADMIN) {
                 response.sendRedirect("admin.jsp");
             } else if (user.getRole() == Role.RECEPTIONIST) {
-                response.sendRedirect("dashboard.jsp");
+                response.sendRedirect("receptionist.jsp");
             }
 
         } else {
