@@ -18,15 +18,12 @@ public class ClientServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
 
-        EntityManager em = EntityManagerFactoryProvider.getEMF().createEntityManager();
-        try {
+        try (EntityManager em = EntityManagerFactoryProvider.getEMF().createEntityManager()) {
             ClientDAO dao = new ClientDAO(em);
             ClientService service = new ClientService(dao);
             List<Client> clients = service.findAll();
             req.setAttribute("clients", clients);
             req.getRequestDispatcher("clients.jsp").forward(req, resp);
-        } finally {
-            em.close();
         }
     }
 
