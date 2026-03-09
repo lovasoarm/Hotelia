@@ -2,7 +2,6 @@ package com.hotelia.servlet;
 
 import com.hotelia.dao.ClientDAO;
 import com.hotelia.model.Client;
-import com.hotelia.model.User;
 import com.hotelia.service.ClientService;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
@@ -15,6 +14,7 @@ import java.util.List;
 
 @WebServlet("/clients")
 public class ClientServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
 
@@ -22,16 +22,13 @@ public class ClientServlet extends HttpServlet {
         try {
             ClientDAO dao = new ClientDAO(em);
             ClientService service = new ClientService(dao);
-
             List<Client> clients = service.findAll();
             req.setAttribute("clients", clients);
             req.getRequestDispatcher("clients.jsp").forward(req, resp);
-
         } finally {
             em.close();
         }
     }
-
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
@@ -39,7 +36,6 @@ public class ClientServlet extends HttpServlet {
         EntityManager em = EntityManagerFactoryProvider.getEMF().createEntityManager();
         ClientDAO dao = new ClientDAO(em);
         ClientService service = new ClientService(dao);
-
         String action = req.getParameter("action");
 
         try {
@@ -49,15 +45,26 @@ public class ClientServlet extends HttpServlet {
                 String email     = req.getParameter("email");
                 String phone     = req.getParameter("phone");
                 String address   = req.getParameter("address");
-
                 Client client = new Client(firstName, lastName, email, phone, address);
                 service.createClient(client);
-                resp.sendRedirect("clients?success=true");
+                resp.sendRedirect("clients?success=created");
 
             } else if ("delete".equals(action)) {
                 Long id = Long.parseLong(req.getParameter("id"));
                 service.deleteClient(id);
                 resp.sendRedirect("clients?success=deleted");
+
+            } else if ("update".equals(action)) {
+                Long id = Long.parseLong(req.getParameter("id"));
+
+                Client existing = service.findById(id);
+                existing.setFirstName(req.getParameter("firstName"));
+                existing.setLastName(req.getParameter("lastName"));
+                existing.setEmail(req.getParameter("email"));
+                existing.setPhone(req.getParameter("phone"));
+                existing.setAddress(req.getParameter("address"));
+                service.updateClient(existing);
+                resp.sendRedirect("clients?success=updated");
 
             } else {
                 resp.sendRedirect("clients?error=Action inconnue");
