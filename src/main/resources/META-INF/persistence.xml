@@ -4,11 +4,12 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>com.hotelia.model.User</class>
+
         <class>com.hotelia.model.Client</class>
         <class>com.hotelia.model.Room</class>
         <class>com.hotelia.model.Reservation</class>
         <class>com.hotelia.model.Invoice</class>
+        <class>com.hotelia.model.AuditLog</class>
 
         <properties>
 
