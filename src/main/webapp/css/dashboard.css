@@ -2,12 +2,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background: #f5f5f5;
 }
 
-
 .navbar {
-    background: #2c3e50;
+    background: #FE5A1D;
     color: white;
     padding: 14px 24px;
     display: flex;
@@ -15,45 +14,61 @@ body {
     align-items: center;
 }
 .navbar h1 { font-size: 20px; letter-spacing: 1px; }
-.navbar span { font-size: 14px; color: #bdc3c7; }
+.navbar span { font-size: 14px; color: #fff; margin-right: 12px; }
 .navbar a {
     color: white;
-    background: #e74c3c;
+    background: rgba(0,0,0,0.2);
     padding: 7px 14px;
     text-decoration: none;
     border-radius: 4px;
     font-size: 14px;
-    margin-left: 16px;
 }
-.navbar a:hover { background: #c0392b; }
+.navbar a:hover { background: rgba(0,0,0,0.35); }
 
-
-.container { padding: 30px 24px; }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+}
 
 .welcome {
     font-size: 15px;
-    color: #555;
+    color: #666;
     margin-bottom: 24px;
+    text-align: center;
 }
-
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 200px);
     gap: 16px;
-    max-width: 700px;
 }
 
 .card {
     background: white;
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 20px;
+    padding: 24px 20px;
     text-decoration: none;
     color: #333;
     display: block;
+    text-align: center;
 }
-.card:hover { border-color: #2c3e50; }
-.card .icon { font-size: 28px; margin-bottom: 8px; }
-.card .label { font-size: 16px; font-weight: bold; }
-.card .desc { font-size: 13px; color: #888; margin-top: 4px; }
+.card:hover { border-color: #FE5A1D; }
+
+.card .icon {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: #FE5A1D;
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px auto;
+}
+.card .label { font-size: 15px; font-weight: bold; margin-bottom: 4px; }
+.card .desc  { font-size: 12px; color: #888; }

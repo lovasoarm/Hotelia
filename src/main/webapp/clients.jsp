@@ -49,7 +49,7 @@
         <div class="msg-error">Erreur : <%= error %></div>
     <% } %>
 
-    <%-- FORMULAIRE CREATION --%>
+
     <div class="form-section">
         <h3>Nouveau client</h3>
         <form action="clients" method="post">
@@ -89,7 +89,7 @@
                     <td><%= c.getAddress() %></td>
                     <% if (isAdmin) { %>
                     <td>
-                        <%-- SUPPRIMER --%>
+
                         <form action="clients" method="post" style="display:inline">
                             <input type="hidden" name="action" value="delete"/>
                             <input type="hidden" name="id" value="<%= c.getId() %>"/>

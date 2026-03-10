@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,18 +11,19 @@ body {
 
 .login-container {
     background: white;
-    padding: 30px;
+    padding: 32px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     width: 320px;
 }
 
 .login-container h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    font-size: 20px;
+    margin-bottom: 24px;
+    color: #FE5A1D;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 .login-container input[type=text],
@@ -38,17 +39,14 @@ body {
 .login-container input[type=submit] {
     width: 100%;
     padding: 10px;
-    background: #2c3e50;
+    background: #FE5A1D;
     color: white;
     border: none;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
 }
-
-.login-container input[type=submit]:hover {
-    background: #1a252f;
-}
+.login-container input[type=submit]:hover { background: #e04d18; }
 
 .error {
     color: #e74c3c;

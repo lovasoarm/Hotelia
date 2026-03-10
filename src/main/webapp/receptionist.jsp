@@ -27,25 +27,25 @@
     <div class="grid">
 
         <a href="clients" class="card">
-            <div class="icon">👥</div>
+            <div class="icon">C</div>
             <div class="label">Clients</div>
             <div class="desc">Enregistrer et consulter</div>
         </a>
 
         <a href="rooms" class="card">
-            <div class="icon">🛏</div>
+            <div class="icon">R</div>
             <div class="label">Chambres</div>
             <div class="desc">Voir les disponibilités</div>
         </a>
 
         <a href="reservations" class="card">
-            <div class="icon">📅</div>
+            <div class="icon">Rv</div>
             <div class="label">Réservations</div>
             <div class="desc">Créer, confirmer, annuler</div>
         </a>
 
         <a href="invoices" class="card">
-            <div class="icon">💰</div>
+            <div class="icon">F</div>
             <div class="label">Factures</div>
             <div class="desc">Générer et consulter</div>
         </a>
