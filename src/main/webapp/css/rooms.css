@@ -5,7 +5,6 @@ body {
     background: #f0f0f0;
 }
 
-
 .navbar {
     background: #FE5A1D;
     color: white;
@@ -29,7 +28,6 @@ body {
 
 .container { padding: 24px; }
 
-
 .msg-success {
     background: #d4edda;
     color: #155724;
@@ -47,7 +45,6 @@ body {
     border: 1px solid #f5c6cb;
 }
 
-
 .form-section {
     background: white;
     border: 1px solid #ddd;
@@ -56,12 +53,9 @@ body {
     margin-bottom: 24px;
     max-width: 600px;
 }
-.form-section h3 {
-    margin-bottom: 16px;
-    font-size: 16px;
-    color: #333;
-}
-.form-section input {
+.form-section h3 { margin-bottom: 16px; font-size: 16px; color: #333; }
+.form-section input,
+.form-section select {
     width: 100%;
     padding: 8px 10px;
     margin-bottom: 10px;
@@ -69,6 +63,7 @@ body {
     border-radius: 4px;
     font-size: 14px;
 }
+
 .btn {
     padding: 8px 16px;
     border: none;
@@ -80,9 +75,15 @@ body {
 .btn-create:hover { background: #1a252f; }
 .btn-delete { background: #e74c3c; color: white; }
 .btn-delete:hover { background: #c0392b; }
+.btn-status { background: #7f8c8d; color: white; }
+.btn-status:hover { background: #636e72; }
 
-
-.table-section { background: white; border: 1px solid #ddd; border-radius: 6px; padding: 20px; }
+.table-section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+}
 .table-section h3 { margin-bottom: 16px; font-size: 16px; color: #333; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 th {
@@ -94,4 +95,14 @@ th {
 td { padding: 9px 12px; border-bottom: 1px solid #eee; }
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: #f9f9f9; }
-.empty { color: #999; font-style: italic; padding: 12px; }
+.empty { color: #999; font-style: italic; }
+
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.badge-available   { background: #d4edda; color: #155724; }
+.badge-occupied    { background: #fff3cd; color: #856404; }
+.badge-maintenance { background: #f8d7da; color: #721c24; }
