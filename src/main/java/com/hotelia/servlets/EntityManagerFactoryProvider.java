@@ -1,4 +1,4 @@
-package com.hotelia.servlet;
+package com.hotelia.servlets;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;

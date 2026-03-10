@@ -1,4 +1,4 @@
-package com.hotelia.servlet;
+package com.hotelia.servlets;
 
 import com.hotelia.daos.AuditLogDAO;
 import com.hotelia.daos.RoomDAO;
@@ -38,7 +38,7 @@ public class RoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
 
-        User user = (User) req.getSession().getAtstribute("user");
+        User user = (User) req.getSession().getAttribute("user");
         String username = user.getUsername();
         String action = req.getParameter("action");
 

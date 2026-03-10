@@ -1,4 +1,4 @@
-package com.hotelia.service;
+package com.hotelia.services;
 
 import com.hotelia.daos.AuditLogDAO;
 import com.hotelia.models.AuditLog;

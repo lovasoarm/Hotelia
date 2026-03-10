@@ -1,4 +1,4 @@
-package com.hotelia.service;
+package com.hotelia.services;
 
 import com.hotelia.daos.ClientDAO;
 import com.hotelia.daos.ReservationDAO;

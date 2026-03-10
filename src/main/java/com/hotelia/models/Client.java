@@ -1,4 +1,4 @@
-package com.hotelia.model;
+package com.hotelia.models;
 
 import jakarta.persistence.*;
 

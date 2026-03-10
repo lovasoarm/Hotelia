@@ -1,4 +1,4 @@
-package com.hotelia.servlet;
+package com.hotelia.servlets;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;

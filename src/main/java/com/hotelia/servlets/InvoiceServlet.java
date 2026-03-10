@@ -1,4 +1,4 @@
-package com.hotelia.servlet;
+package com.hotelia.servlets;
 
 import com.hotelia.daos.AuditLogDAO;
 import com.hotelia.daos.InvoiceDAO;
