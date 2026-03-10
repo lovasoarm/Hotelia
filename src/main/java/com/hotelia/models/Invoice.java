@@ -25,6 +25,11 @@ public class Invoice {
         this.isPaid = false;
         calculate();
     }
+    public Long getId()                  { return id; }
+    public LocalDateTime getIssueDate()  { return issueDate; }
+    public double getTotalAmount()       { return totalAmount; }
+    public boolean isPaid()              { return isPaid; }
+    public Reservation getReservation()  { return reservation; }
 
     public void calculate() {
         this.totalAmount = reservation.calculateTotal();
