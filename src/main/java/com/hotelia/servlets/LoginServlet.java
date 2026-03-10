@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
 
             if (user.getRole() == Role.ADMIN) {
-                response.sendRedirect("asdmin.jsp");
+                response.sendRedirect("admin.jsp");
             } else if (user.getRole() == Role.RECEPTIONIST) {
                 response.sendRedirect("receptionist.jsp");
             }

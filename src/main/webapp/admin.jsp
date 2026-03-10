@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.hotelia.model.User" %>
+<%@ page import="com.hotelia.models.User" %>
 <%
     User user = (User) session.getAttribute("user");
     if(user == null || !user.getRole().name().equals("ADMIN")){

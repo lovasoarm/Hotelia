@@ -4,7 +4,7 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-
+        <class>com.hotelia.models.User</class>
         <class>com.hotelia.models.Client</class>
         <class>com.hotelia.models.Room</class>
         <class>com.hotelia.models.Reservation</class>

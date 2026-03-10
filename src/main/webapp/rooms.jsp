@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.hotelia.model.Room" %>
-<%@ page import="com.hotelia.model.User" %>
+<%@ page import="com.hotelia.models.Room" %>
+<%@ page import="com.hotelia.models.User" %>
 <%@ page import="com.hotelia.enums.Role" %>
 <%@ page import="com.hotelia.enums.RoomType" %>
 <%@ page import="com.hotelia.enums.RoomStatus" %>
