@@ -1,10 +1,10 @@
 package com.hotelia.service;
 
-import com.hotelia.dao.InvoiceDAO;
-import com.hotelia.dao.ReservationDAO;
+import com.hotelia.daos.InvoiceDAO;
+import com.hotelia.daos.ReservationDAO;
 import com.hotelia.enums.ReservationStatus;
-import com.hotelia.model.Invoice;
-import com.hotelia.model.Reservation;
+import com.hotelia.models.Invoice;
+import com.hotelia.models.Reservation;
 import java.util.List;
 
 public class InvoiceService {

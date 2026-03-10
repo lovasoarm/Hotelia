@@ -1,8 +1,8 @@
 package com.hotelia.service;
 
-import com.hotelia.dao.RoomDAO;
+import com.hotelia.daos.RoomDAO;
 import com.hotelia.enums.RoomStatus;
-import com.hotelia.model.Room;
+import com.hotelia.models.Room;
 import java.util.List;
 
 public class RoomService {

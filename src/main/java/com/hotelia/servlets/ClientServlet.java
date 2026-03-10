@@ -1,11 +1,11 @@
-package com.hotelia.servlet;
+package com.hotelia.servlets;
 
-import com.hotelia.dao.AuditLogDAO;
-import com.hotelia.dao.ClientDAO;
-import com.hotelia.model.Client;
-import com.hotelia.model.User;
-import com.hotelia.service.AuditLogService;
-import com.hotelia.service.ClientService;
+import com.hotelia.daos.AuditLogDAO;
+import com.hotelia.daos.ClientDAO;
+import com.hotelia.models.Client;
+import com.hotelia.models.User;
+import com.hotelia.services.AuditLogService;
+import com.hotelia.services.ClientService;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

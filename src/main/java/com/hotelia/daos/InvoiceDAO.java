@@ -1,6 +1,6 @@
-package com.hotelia.dao;
+package com.hotelia.daos;
 
-import com.hotelia.model.Invoice;
+import com.hotelia.models.Invoice;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import java.util.List;

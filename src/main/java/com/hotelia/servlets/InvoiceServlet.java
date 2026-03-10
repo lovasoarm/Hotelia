@@ -1,12 +1,12 @@
 package com.hotelia.servlet;
 
-import com.hotelia.dao.AuditLogDAO;
-import com.hotelia.dao.InvoiceDAO;
-import com.hotelia.dao.ReservationDAO;
-import com.hotelia.model.Invoice;
-import com.hotelia.model.User;
-import com.hotelia.service.AuditLogService;
-import com.hotelia.service.InvoiceService;
+import com.hotelia.daos.AuditLogDAO;
+import com.hotelia.daos.InvoiceDAO;
+import com.hotelia.daos.ReservationDAO;
+import com.hotelia.models.Invoice;
+import com.hotelia.models.User;
+import com.hotelia.services.AuditLogService;
+import com.hotelia.services.InvoiceService;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

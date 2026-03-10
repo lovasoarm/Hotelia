@@ -1,8 +1,8 @@
 package com.hotelia.service;
 
-import com.hotelia.dao.UserDAO;
+import com.hotelia.daos.UserDAO;
 import com.hotelia.enums.Role;
-import com.hotelia.model.User;
+import com.hotelia.models.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 

@@ -5,11 +5,11 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 
-        <class>com.hotelia.model.Client</class>
-        <class>com.hotelia.model.Room</class>
-        <class>com.hotelia.model.Reservation</class>
-        <class>com.hotelia.model.Invoice</class>
-        <class>com.hotelia.model.AuditLog</class>
+        <class>com.hotelia.models.Client</class>
+        <class>com.hotelia.models.Room</class>
+        <class>com.hotelia.models.Reservation</class>
+        <class>com.hotelia.models.Invoice</class>
+        <class>com.hotelia.models.AuditLog</class>
 
         <properties>
 

@@ -1,13 +1,13 @@
 package com.hotelia.servlet;
 
-import com.hotelia.dao.AuditLogDAO;
-import com.hotelia.dao.RoomDAO;
+import com.hotelia.daos.AuditLogDAO;
+import com.hotelia.daos.RoomDAO;
 import com.hotelia.enums.RoomStatus;
 import com.hotelia.enums.RoomType;
-import com.hotelia.model.Room;
-import com.hotelia.model.User;
-import com.hotelia.service.AuditLogService;
-import com.hotelia.service.RoomService;
+import com.hotelia.models.Room;
+import com.hotelia.models.User;
+import com.hotelia.services.AuditLogService;
+import com.hotelia.services.RoomService;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -38,7 +38,7 @@ public class RoomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
 
-        User user = (User) req.getSession().getAttribute("user");
+        User user = (User) req.getSession().getAtstribute("user");
         String username = user.getUsername();
         String action = req.getParameter("action");
 

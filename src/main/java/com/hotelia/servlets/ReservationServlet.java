@@ -1,15 +1,15 @@
 package com.hotelia.servlet;
 
-import com.hotelia.dao.AuditLogDAO;
-import com.hotelia.dao.ClientDAO;
-import com.hotelia.dao.ReservationDAO;
-import com.hotelia.dao.RoomDAO;
-import com.hotelia.model.Client;
-import com.hotelia.model.Reservation;
-import com.hotelia.model.Room;
-import com.hotelia.model.User;
-import com.hotelia.service.AuditLogService;
-import com.hotelia.service.ReservationService;
+import com.hotelia.daos.AuditLogDAO;
+import com.hotelia.daos.ClientDAO;
+import com.hotelia.daos.ReservationDAO;
+import com.hotelia.daos.RoomDAO;
+import com.hotelia.models.Client;
+import com.hotelia.models.Reservation;
+import com.hotelia.models.Room;
+import com.hotelia.models.User;
+import com.hotelia.services.AuditLogService;
+import com.hotelia.services.ReservationService;
 import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,7 +35,6 @@ public class ReservationServlet extends HttpServlet {
             ReservationService service = new ReservationService(
                     reservationDAO, roomDAO, clientDAO, auditLogService
             );
-
 
             List<Reservation> reservations = service.findAll();
             List<Client> clients = clientDAO.findAll();

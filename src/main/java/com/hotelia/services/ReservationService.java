@@ -1,12 +1,12 @@
 package com.hotelia.service;
 
-import com.hotelia.dao.ClientDAO;
-import com.hotelia.dao.ReservationDAO;
-import com.hotelia.dao.RoomDAO;
+import com.hotelia.daos.ClientDAO;
+import com.hotelia.daos.ReservationDAO;
+import com.hotelia.daos.RoomDAO;
 import com.hotelia.enums.ReservationStatus;
-import com.hotelia.model.Client;
-import com.hotelia.model.Reservation;
-import com.hotelia.model.Room;
+import com.hotelia.models.Client;
+import com.hotelia.models.Reservation;
+import com.hotelia.models.Room;
 import java.time.LocalDate;
 import java.util.List;
 

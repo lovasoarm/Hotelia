@@ -1,7 +1,7 @@
 package com.hotelia.service;
 
-import com.hotelia.dao.AuditLogDAO;
-import com.hotelia.model.AuditLog;
+import com.hotelia.daos.AuditLogDAO;
+import com.hotelia.models.AuditLog;
 import java.util.List;
 
 public class AuditLogService {
