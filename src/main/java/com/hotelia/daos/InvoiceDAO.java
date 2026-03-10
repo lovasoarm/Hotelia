@@ -26,7 +26,15 @@ public class InvoiceDAO {
         TypedQuery<Invoice> query = em.createQuery("SELECT i FROM Invoice i", Invoice.class);
         return query.getResultList();
     }
-
+    public Invoice findByReservation(Long reservationId) {
+        TypedQuery<Invoice> query = em.createQuery(
+                "SELECT i FROM Invoice i WHERE i.reservation.id = :reservationId",
+                Invoice.class
+        );
+        query.setParameter("reservationId", reservationId);
+        List<Invoice> results = query.getResultList();
+        return results.isEmpty() ? null : results.get(0);
+    }
     public void update(Invoice invoice) {
         em.getTransaction().begin();
         em.merge(invoice);
