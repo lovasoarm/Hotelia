@@ -7,6 +7,7 @@ import java.util.List;
 public class ClientService {
 
     private final ClientDAO clientDAO;
+    private final AuditLogService auditLogService;
 
     public ClientService(ClientDAO clientDAO) {
         this.clientDAO = clientDAO;
@@ -20,6 +21,11 @@ public class ClientService {
             throw new IllegalStateException("L'email est obligatoire");
         }
         clientDAO.create(client);
+        auditLogService.log(
+                "CREATE_CLIENT",
+                username,
+                "Client " + client.getFullName() + " créé"
+        );
     }
 
     public Client findById(Long id) {
@@ -39,6 +45,11 @@ public class ClientService {
             throw new IllegalStateException("Client invalide");
         }
         clientDAO.update(client);
+        auditLogService.log(
+                "UPDATE_CLIENT",
+                username,
+                "Client #" + client.getId() + " mis à jour"
+        );
     }
 
     public void deleteClient(Long id) {
@@ -49,5 +60,11 @@ public class ClientService {
             );
         }
         clientDAO.delete(client);
+        auditLogService.log(
+                "DELETE_CLIENT",
+                username,
+                "Client " + client.getFullName() + " supprimé"
+        );
+
     }
 }
